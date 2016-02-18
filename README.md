@@ -7,7 +7,6 @@ Helps friends manage hangouts utilizing location-based statuses, and makes recom
 	- calendar integration
 	- by default, just the closest address
 	- school, work, etc.
-- [ ] I can integrate 
 - [ ] I can message groups going to events
 - [ ] I can view all my groups in a table view
 - [ ] For each group I can see the statuses, events, and group chat (tab)
