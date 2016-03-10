@@ -13,3 +13,17 @@ Helps friends manage hangouts utilizing location-based statuses, and makes recom
 - [ ] I can view all my groups in a table view
 - [ ] For each group I can see the statuses, events, and group chat (tab)
 - [ ] when I select a user in the status tab, uber-style tracking
+
+#Scheme 
+- [ ] Group
+	- Group name
+	- photo and other personalizing features  
+	- list of Members
+- [ ] Member
+	- Location
+	- status
+	- First Name 
+	- Last Name
+	- profile image
+	- groups belonging to
+	- likes
