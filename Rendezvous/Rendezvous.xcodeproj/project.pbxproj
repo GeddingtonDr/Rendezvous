@@ -18,9 +18,13 @@
 		9A8131671CA28DE1007966D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131661CA28DE1007966D9 /* User.swift */; };
 		9A8131691CA2903A007966D9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131681CA2903A007966D9 /* ContainerViewController.swift */; };
 		9A81316B1CA293C6007966D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A81316A1CA293C6007966D9 /* MapKit.framework */; };
+		9AE42E691CA38F2B00278EAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE42E681CA38F2B00278EAC /* LoginViewController.swift */; };
+		C5D528D779CC9F5A7A56DF17 /* Pods_Rendezvous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F8E3D65119807F7D61D219 /* Pods_Rendezvous.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13B7B2BC63E70B66353470C2 /* Pods-Rendezvous.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rendezvous.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rendezvous/Pods-Rendezvous.release.xcconfig"; sourceTree = "<group>"; };
+		9A5EFACE71BCE5E58EED3E52 /* Pods-Rendezvous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rendezvous.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rendezvous/Pods-Rendezvous.debug.xcconfig"; sourceTree = "<group>"; };
 		9A8131451CA2829B007966D9 /* Rendezvous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rendezvous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8131481CA2829B007966D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A81314D1CA2829B007966D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +38,8 @@
 		9A8131661CA28DE1007966D9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A8131681CA2903A007966D9 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		9A81316A1CA293C6007966D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9AE42E681CA38F2B00278EAC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2F8E3D65119807F7D61D219 /* Pods_Rendezvous.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rendezvous.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,18 +48,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A81316B1CA293C6007966D9 /* MapKit.framework in Frameworks */,
+				C5D528D779CC9F5A7A56DF17 /* Pods_Rendezvous.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02C166CA7EDA25E7D6736B01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A5EFACE71BCE5E58EED3E52 /* Pods-Rendezvous.debug.xcconfig */,
+				13B7B2BC63E70B66353470C2 /* Pods-Rendezvous.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A81313C1CA2829B007966D9 = {
 			isa = PBXGroup;
 			children = (
 				9A81316A1CA293C6007966D9 /* MapKit.framework */,
 				9A8131471CA2829B007966D9 /* Rendezvous */,
 				9A8131461CA2829B007966D9 /* Products */,
+				02C166CA7EDA25E7D6736B01 /* Pods */,
+				D42E6F530B932AFE9EEE9ACD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +122,7 @@
 				9A8131681CA2903A007966D9 /* ContainerViewController.swift */,
 				9A8131601CA283B0007966D9 /* MainViewController.swift */,
 				9A81315A1CA28320007966D9 /* MapViewController.swift */,
+				9AE42E681CA38F2B00278EAC /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -115,6 +134,14 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		D42E6F530B932AFE9EEE9ACD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2F8E3D65119807F7D61D219 /* Pods_Rendezvous.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A8131571CA2829B007966D9 /* Build configuration list for PBXNativeTarget "Rendezvous" */;
 			buildPhases = (
+				EE224B29FD03C1A3AE5A9C9B /* Check Pods Manifest.lock */,
 				9A8131411CA2829B007966D9 /* Sources */,
 				9A8131421CA2829B007966D9 /* Frameworks */,
 				9A8131431CA2829B007966D9 /* Resources */,
+				0A9836DEDDC25BFB28B67EB4 /* Embed Pods Frameworks */,
+				6AEDB8B3BAB62787C1F6DF9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +211,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A9836DEDDC25BFB28B67EB4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rendezvous/Pods-Rendezvous-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AEDB8B3BAB62787C1F6DF9C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rendezvous/Pods-Rendezvous-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE224B29FD03C1A3AE5A9C9B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A8131411CA2829B007966D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -190,6 +268,7 @@
 				9A8131491CA2829B007966D9 /* AppDelegate.swift in Sources */,
 				9A8131691CA2903A007966D9 /* ContainerViewController.swift in Sources */,
 				9A8131671CA28DE1007966D9 /* User.swift in Sources */,
+				9AE42E691CA38F2B00278EAC /* LoginViewController.swift in Sources */,
 				9A8131631CA28B38007966D9 /* MainTableViewCell.swift in Sources */,
 				9A8131651CA28DD2007966D9 /* Vertex.swift in Sources */,
 				9A81315B1CA28320007966D9 /* MapViewController.swift in Sources */,
@@ -301,6 +380,7 @@
 		};
 		9A8131581CA2829B007966D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A5EFACE71BCE5E58EED3E52 /* Pods-Rendezvous.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Rendezvous/Info.plist;
@@ -312,6 +392,7 @@
 		};
 		9A8131591CA2829B007966D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B7B2BC63E70B66353470C2 /* Pods-Rendezvous.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Rendezvous/Info.plist;
@@ -340,6 +421,7 @@
 				9A8131591CA2829B007966D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
