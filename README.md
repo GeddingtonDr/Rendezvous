@@ -27,3 +27,10 @@ Helps friends manage hangouts utilizing location-based statuses, and makes recom
 	- profile image
 	- groups belonging to
 	- likes
+## Video Walkthrough 
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://i.imgur.com/8TURfRn.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
