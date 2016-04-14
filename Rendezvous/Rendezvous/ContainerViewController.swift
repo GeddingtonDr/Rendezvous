@@ -17,18 +17,18 @@ class ContainerViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mapVC = storyboard.instantiateViewControllerWithIdentifier("MapViewController")
+        let profileVC = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
         let mainVC = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         
-        self.addChildViewController(mapVC)
-        self.scrollView.addSubview(mapVC.view)
-        mapVC.didMoveToParentViewController(self)
+        self.addChildViewController(profileVC)
+        self.scrollView.addSubview(profileVC.view)
+        profileVC.didMoveToParentViewController(self)
         
         self.addChildViewController(mainVC)
         self.scrollView.addSubview(mainVC.view)
         mainVC.didMoveToParentViewController(self)
         
-        var adminFrame :CGRect = mapVC.view.frame
+        var adminFrame :CGRect = profileVC.view.frame
         adminFrame.origin.x = adminFrame.width
         mainVC.view.frame = adminFrame
         

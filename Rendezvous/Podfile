@@ -4,6 +4,6 @@
 use_frameworks!
 
 target 'Rendezvous' do
-	pod ‘Parse’
+	pod 'Parse'
 end
 

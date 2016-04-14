@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate,CLLocationManagerDelegate{
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     var vertices:[Vertex]?
 
@@ -22,6 +26,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let u1 = User(dictionary: dict)
         let v1 = Vertex(user: u1)
         vertices = [v1, v1, v1, v1]
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
+        self.mapView.showsUserLocation = true
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -44,6 +56,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last
+        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1))
+        self.mapView.setRegion(region, animated: true)
+        self.locationManager.stopUpdatingLocation()
+    }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("error: " + error.localizedDescription)
+    }
 
     /*
     // MARK: - Navigation
