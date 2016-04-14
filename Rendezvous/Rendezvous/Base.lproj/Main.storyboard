@@ -8,7 +8,7 @@
         <!--Container View Controller-->
         <scene sceneID="lnF-eE-S2S">
             <objects>
-                <viewController id="7Q5-wh-aud" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContainerViewController" id="7Q5-wh-aud" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Be0-Fz-eT9"/>
                         <viewControllerLayoutGuide type="bottom" id="5Nq-KW-MyJ"/>
@@ -160,37 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17l-Qh-sIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="634" y="-202"/>
-        </scene>
-        <!--Container View Controller-->
-        <scene sceneID="1DJ-vp-ccA">
-            <objects>
-                <viewController storyboardIdentifier="ContainerViewController" title="Container View Controller" id="jwe-b3-ZFV" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1fe-gk-f2T"/>
-                        <viewControllerLayoutGuide type="bottom" id="RqD-39-Kw6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hIm-Jr-05k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm5-zV-ogr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="Tm5-zV-ogr" id="zBR-aS-N3y"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yKg-Rk-b5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="634" y="455"/>
-=======
             <point key="canvasLocation" x="837" y="-278"/>
->>>>>>> 0190f7c8ef864a96c84cf3a07cda4296afe5f995
         </scene>
     </scenes>
     <resources>
