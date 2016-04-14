@@ -5,6 +5,32 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
+        <!--Container View Controller-->
+        <scene sceneID="lnF-eE-S2S">
+            <objects>
+                <viewController id="7Q5-wh-aud" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Be0-Fz-eT9"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Nq-KW-MyJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yf8-1e-4Id">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-ft-rrP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="fOM-ft-rrP" id="ham-hk-8gX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWO-kl-Dd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="457"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,8 +43,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1gr-1Q-h1P">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RfD-cv-KcG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="281"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1gr-1Q-h1P">
+                                <rect key="frame" x="0.0" y="279" width="320" height="289"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="114" id="dxy-RQ-WkN" customClass="MainTableViewCell" customModule="Rendezvous" customModuleProvider="target">
@@ -58,6 +87,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="RfD-cv-KcG" id="5vP-SW-Mbv"/>
                         <outlet property="tableView" destination="1gr-1Q-h1P" id="0HI-S9-BJA"/>
                     </connections>
                 </viewController>
@@ -65,31 +95,23 @@
             </objects>
             <point key="canvasLocation" x="1039" y="455"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="6nq-cH-kcf">
+        <!--Profile View Controller-->
+        <scene sceneID="kRr-Vm-gL5">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pEm-Mm-pSh" customClass="MapViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qn9-Bc-Q5V" customClass="ProfileViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0gh-qM-QQR"/>
-                        <viewControllerLayoutGuide type="bottom" id="VA0-ko-Txf"/>
+                        <viewControllerLayoutGuide type="top" id="ts1-hW-GaP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5tU-mj-wgP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fQt-Ek-TUp">
+                    <view key="view" contentMode="scaleToFill" id="bKs-RR-FiA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RfD-cv-KcG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="387"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="mapView" destination="RfD-cv-KcG" id="8d6-fH-qO6"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TPP-72-Tp9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNS-RW-JVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="455"/>
+            <point key="canvasLocation" x="74" y="455"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ad7-yw-1dh">
@@ -133,38 +155,12 @@
                     <connections>
                         <outlet property="passwordField" destination="5pA-PG-Jjq" id="CcR-HI-6X4"/>
                         <outlet property="usernameField" destination="zEw-u0-FUu" id="nkd-Wt-A4F"/>
-                        <segue destination="jwe-b3-ZFV" kind="modal" identifier="loginSegue" id="rmY-AD-6bl"/>
+                        <segue destination="7Q5-wh-aud" kind="modal" identifier="loginSegue" id="emy-ko-e8i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17l-Qh-sIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634" y="-202"/>
-        </scene>
-        <!--Container View Controller-->
-        <scene sceneID="1DJ-vp-ccA">
-            <objects>
-                <viewController title="Container View Controller" id="jwe-b3-ZFV" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1fe-gk-f2T"/>
-                        <viewControllerLayoutGuide type="bottom" id="RqD-39-Kw6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hIm-Jr-05k">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tm5-zV-ogr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="Tm5-zV-ogr" id="zBR-aS-N3y"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yKg-Rk-b5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="634" y="455"/>
+            <point key="canvasLocation" x="837" y="-278"/>
         </scene>
     </scenes>
     <resources>

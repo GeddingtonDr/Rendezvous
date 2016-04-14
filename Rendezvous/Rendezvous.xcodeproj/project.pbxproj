@@ -11,14 +11,14 @@
 		9A81314E1CA2829B007966D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A81314C1CA2829B007966D9 /* Main.storyboard */; };
 		9A8131501CA2829B007966D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A81314F1CA2829B007966D9 /* Assets.xcassets */; };
 		9A8131531CA2829B007966D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A8131511CA2829B007966D9 /* LaunchScreen.storyboard */; };
-		9A81315B1CA28320007966D9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81315A1CA28320007966D9 /* MapViewController.swift */; };
 		9A8131611CA283B0007966D9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131601CA283B0007966D9 /* MainViewController.swift */; };
 		9A8131631CA28B38007966D9 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131621CA28B38007966D9 /* MainTableViewCell.swift */; };
 		9A8131651CA28DD2007966D9 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131641CA28DD2007966D9 /* Vertex.swift */; };
 		9A8131671CA28DE1007966D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131661CA28DE1007966D9 /* User.swift */; };
-		9A8131691CA2903A007966D9 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8131681CA2903A007966D9 /* ContainerViewController.swift */; };
 		9A81316B1CA293C6007966D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A81316A1CA293C6007966D9 /* MapKit.framework */; };
 		9AE42E691CA38F2B00278EAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE42E681CA38F2B00278EAC /* LoginViewController.swift */; };
+		9AEDDDFD1CBF411200C2C6DC /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDDDFC1CBF411200C2C6DC /* ContainerViewController.swift */; };
+		9AEDDDFF1CBF450B00C2C6DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEDDDFE1CBF450B00C2C6DC /* ProfileViewController.swift */; };
 		C5D528D779CC9F5A7A56DF17 /* Pods_Rendezvous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F8E3D65119807F7D61D219 /* Pods_Rendezvous.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,14 +31,14 @@
 		9A81314F1CA2829B007966D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A8131521CA2829B007966D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A8131541CA2829B007966D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A81315A1CA28320007966D9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9A8131601CA283B0007966D9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9A8131621CA28B38007966D9 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		9A8131641CA28DD2007966D9 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
 		9A8131661CA28DE1007966D9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		9A8131681CA2903A007966D9 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		9A81316A1CA293C6007966D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9AE42E681CA38F2B00278EAC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9AEDDDFC1CBF411200C2C6DC /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		9AEDDDFE1CBF450B00C2C6DC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A2F8E3D65119807F7D61D219 /* Pods_Rendezvous.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rendezvous.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,10 +119,10 @@
 		9A81315E1CA2833C007966D9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9A8131681CA2903A007966D9 /* ContainerViewController.swift */,
 				9A8131601CA283B0007966D9 /* MainViewController.swift */,
-				9A81315A1CA28320007966D9 /* MapViewController.swift */,
 				9AE42E681CA38F2B00278EAC /* LoginViewController.swift */,
+				9AEDDDFC1CBF411200C2C6DC /* ContainerViewController.swift */,
+				9AEDDDFE1CBF450B00C2C6DC /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -266,12 +266,12 @@
 			files = (
 				9A8131611CA283B0007966D9 /* MainViewController.swift in Sources */,
 				9A8131491CA2829B007966D9 /* AppDelegate.swift in Sources */,
-				9A8131691CA2903A007966D9 /* ContainerViewController.swift in Sources */,
+				9AEDDDFD1CBF411200C2C6DC /* ContainerViewController.swift in Sources */,
 				9A8131671CA28DE1007966D9 /* User.swift in Sources */,
 				9AE42E691CA38F2B00278EAC /* LoginViewController.swift in Sources */,
 				9A8131631CA28B38007966D9 /* MainTableViewCell.swift in Sources */,
+				9AEDDDFF1CBF450B00C2C6DC /* ProfileViewController.swift in Sources */,
 				9A8131651CA28DD2007966D9 /* Vertex.swift in Sources */,
-				9A81315B1CA28320007966D9 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
