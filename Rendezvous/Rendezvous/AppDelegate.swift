@@ -14,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    var loggedIn = false
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.initializeWithConfiguration(
@@ -24,6 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://rendezvousappdb.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.currentUser() != nil {
+            // if there is a logged in user then load the home view controller
+            loggedIn = true;
+            let vc = storyboard.instantiateViewControllerWithIdentifier("ContainerViewController	") as UIViewController
+            window?.rootViewController = vc
+        }
         
         return true
     }
