@@ -14,6 +14,7 @@ class User: NSObject {
     var username: String?
     var status: String?
     var image: PFFile?
+    var allowLocation: Bool?
     var lat: Float?
     var long: Float?
     
@@ -24,6 +25,7 @@ class User: NSObject {
         name = obj["nickname"] as? String
         username = obj["username"] as? String
         status = obj["status"] as? String
+        allowLocation = obj["shareLocation"] as? Bool
         lat = obj["lat"] as? Float
         long = obj["long"] as? Float
     }
@@ -35,10 +37,10 @@ class User: NSObject {
     }
     
     class func createUserArray(array: [PFObject]) -> [User] {
-        var posts = [User]()
+        var users = [User]()
         for obj in array {
-            posts.append(User(obj: obj))
+            users.append(User(obj: obj))
         }
-        return posts
+        return users
     }
 }

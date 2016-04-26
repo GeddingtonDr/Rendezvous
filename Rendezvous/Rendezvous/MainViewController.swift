@@ -48,6 +48,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if error == nil {
                 self.users = User.createUserArray(users!)
                 print("got the request back")
+                self.populateMap()
                 self.tableView.reloadData()
             } else {
                 print("No Users found")
@@ -88,6 +89,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("error: " + error.localizedDescription)
+    }
+    
+    func populateMap() {
+        //do shit in here
     }
 
     /*

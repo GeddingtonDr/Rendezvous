@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "81FF72FC16469775ABE05B1A695F731BAF4EA63F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D9B19E4E0A88D6A55EA0450DF35A0D8062CC31D7" : 0,
+    "81FF72FC16469775ABE05B1A695F731BAF4EA63F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E74233B7-4A9A-4D6A-875F-FB5F3B86851D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D9B19E4E0A88D6A55EA0450DF35A0D8062CC31D7" : "..",
+    "81FF72FC16469775ABE05B1A695F731BAF4EA63F" : "Rendezvous\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Rendezvous",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Rendezvous\/Rendezvous.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GeddingtonDr\/Rendezvous.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81FF72FC16469775ABE05B1A695F731BAF4EA63F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/BrandonArroyo\/PebbleDev.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D9B19E4E0A88D6A55EA0450DF35A0D8062CC31D7"
+    }
+  ]
+}
