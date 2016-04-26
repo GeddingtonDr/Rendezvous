@@ -1,5 +1,5 @@
 # Rendezvous
-Helps friends manage hangouts utilizing location-based statuses, and makes recommendations for activities.
+Helps users see the statuses and locations of their friends.
 
 (Prototype wireframes are depicted in the pdf)
 
