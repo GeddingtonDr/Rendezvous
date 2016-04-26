@@ -165,8 +165,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlH-DW-bh0">
+                                <rect key="frame" x="20" y="354" width="280" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <state key="normal" title="Save Changes">
+                                    <color key="titleColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSaveChanges:" destination="qn9-Bc-Q5V" eventType="touchUpInside" id="GPc-A8-VD2"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-BC-HgI">
-                                <rect key="frame" x="20" y="360" width="280" height="43"/>
+                                <rect key="frame" x="20" y="489" width="280" height="43"/>
                                 <color key="backgroundColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                 <state key="normal" title="Log Out">
@@ -180,7 +190,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="6l8-BC-HgI" id="JRf-Db-9hl"/>
+                        <outlet property="nicknameTextField" destination="z2F-zk-J8W" id="8UK-qG-IAo"/>
                         <outlet property="profileImageButton" destination="63O-l0-XYf" id="lyd-eh-QrC"/>
+                        <outlet property="saveChangesButton" destination="JlH-DW-bh0" id="31s-s4-tJG"/>
+                        <outlet property="shareLocationSwitch" destination="DzB-O0-s1J" id="evL-j0-xTR"/>
+                        <outlet property="statusTextField" destination="Ujr-zK-ffV" id="P3A-i8-Xtz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNS-RW-JVz" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,13 +11,36 @@ import Parse
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var saveChangesButton: UIButton!
     @IBOutlet weak var profileImageButton: UIButton!
+    @IBOutlet weak var nicknameTextField: UITextField!
+    @IBOutlet weak var statusTextField: UITextField!
+    @IBOutlet weak var shareLocationSwitch: UISwitch!
+    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         profileImageButton.imageView?.layer.cornerRadius = 53
-        // Do any additional setup after loading the view.
+        saveChangesButton.layer.borderColor = logoutButton.layer.backgroundColor
+        saveChangesButton.layer.borderWidth = 2
+        
+        if let user = PFUser.currentUser() {
+            if let nickname = user["nickname"] {
+                nicknameTextField.placeholder = nickname as! String
+            } else {
+                nicknameTextField.placeholder = "Enter a nickname"
+            }
+            if let status = user["status"] {
+                statusTextField.placeholder = status as! String
+            } else {
+                statusTextField.placeholder = "Enter your status"
+            }
+            
+            if let sharelocation = user["shareLocation"] {
+                shareLocationSwitch.setOn(sharelocation as! Bool, animated: false)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +53,22 @@ class ProfileViewController: UIViewController {
             // PFUser.currentUser() will now be nil
         }
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func onSaveChanges(sender: AnyObject) {
+        if let user = PFUser.currentUser() {
+            user["nickname"] = nicknameTextField.text
+            user["status"] = statusTextField.text
+            user["shareLocation"] = shareLocationSwitch.on
+            
+            user.saveInBackground()
+            
+            nicknameTextField.text = nil
+            statusTextField.text = nil
+            
+            nicknameTextField.placeholder = user["nickname"] as! String
+            statusTextField.placeholder = user["status"] as! String
+        }
     }
 
     /*
