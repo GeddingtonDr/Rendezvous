@@ -7,14 +7,32 @@
 //
 
 import UIKit
+import MapKit
+import Parse
 
-class ContainerViewController: UIViewController {
+class ContainerViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        locationManager.requestWhenInUseAuthorization();
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            
+            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation  //unnecessarily high accuracy
+            //locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.distanceFilter = kCLDistanceFilterNone
+            
+            locationManager.startUpdatingLocation()
+            
+        }
+        else {
+            print("Location service disabled");
+        }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let profileVC = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
@@ -37,6 +55,8 @@ class ContainerViewController: UIViewController {
         self.scrollView!.contentSize = CGSizeMake(scrollWidth, scrollHeight);
         
         scrollView.contentOffset.x = self.view.frame.width
+        
+        PFUser.currentUser()!["whoa"] = "hello"
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +64,31 @@ class ContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue: CLLocationCoordinate2D = (manager.location?.coordinate)!
+        let long = locValue.longitude
+        let lat = locValue.latitude
+        print(long)
+        print(lat)
+        
+        PFUser.currentUser()!["lat"] = lat
+        PFUser.currentUser()!["long"] = long
+        
+        PFUser.currentUser()!.saveInBackground()
+        
+//        let para:NSMutableDictionary = NSMutableDictionary()
+//        para.setValue("\(lat)", forKey: "lat")
+//        para.setValue("\(long)", forKey: "long")
+//        let jsonData: NSData
+//        do{
+//            jsonData = try NSJSONSerialization.dataWithJSONObject(para, options: NSJSONWritingOptions())
+//            let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding) as! String
+//            let s = (locationManager.location?.speed)!
+//            
+//            print(jsonString)
+//            print(s)
+        
+        }
 
     /*
     // MARK: - Navigation

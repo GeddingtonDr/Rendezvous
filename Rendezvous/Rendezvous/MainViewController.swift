@@ -37,7 +37,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.dataSource = self
         tableView.delegate = self
-        
     }
 
     override func didReceiveMemoryWarning() {
