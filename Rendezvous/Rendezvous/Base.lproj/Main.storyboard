@@ -8,7 +8,7 @@
         <!--Container View Controller-->
         <scene sceneID="lnF-eE-S2S">
             <objects>
-                <viewController id="7Q5-wh-aud" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContainerViewController" id="7Q5-wh-aud" customClass="ContainerViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Be0-Fz-eT9"/>
                         <viewControllerLayoutGuide type="bottom" id="5Nq-KW-MyJ"/>
