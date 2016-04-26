@@ -12,9 +12,13 @@ import Parse
 class EventsViewController: UIViewController, UITableViewDataSource {
     
     var events: [Event]!
+    
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -43,12 +47,12 @@ class EventsViewController: UIViewController, UITableViewDataSource {
         if let events = events {
             return events.count
         } else {
-            return 0
+            return 1
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as! EventCell
         // set cell to vertex
         
         //cell.user = users[indexPath.row]

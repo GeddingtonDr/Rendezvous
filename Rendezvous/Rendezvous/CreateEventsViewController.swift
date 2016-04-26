@@ -22,11 +22,14 @@ class CreateEventsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func saveNewEvent() {
+    @IBAction func onCreateEvent(sender: AnyObject) {
         var event = PFObject(className: "Event")
-        
     }
 
+    @IBAction func onCancelPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
