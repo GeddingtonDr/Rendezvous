@@ -24,7 +24,7 @@ class MainTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        profileImageView.layer.cornerRadius = 40
+        profileImageView.layer.cornerRadius = 30
         profileImageView.clipsToBounds = true
         // Initialization code
     }

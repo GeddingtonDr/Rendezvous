@@ -10,9 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImageButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        profileImageButton.imageView?.layer.cornerRadius = 55
         // Do any additional setup after loading the view.
     }
 
