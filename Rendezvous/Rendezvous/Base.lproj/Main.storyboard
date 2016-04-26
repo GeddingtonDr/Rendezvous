@@ -137,7 +137,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63O-l0-XYf">
                                 <rect key="frame" x="108" y="100" width="105" height="105"/>
-                                <state key="normal" title="Button" image="trash"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="onProfileImageButton:" destination="qn9-Bc-Q5V" eventType="touchUpInside" id="eFD-7S-OWf"/>
                                 </connections>

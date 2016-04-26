@@ -24,6 +24,21 @@ class MainTableViewCell: UITableViewCell {
     
     var user: User! {
         didSet {
+            if let file = user.image {
+                file.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
+                    if error == nil {
+                        self.profileImageView.image = UIImage(data: data!)
+                        print("Set the image")
+                    } else {
+                        print(error?.localizedDescription)
+                    }
+                })
+            } else {
+                print("Didn't have image from currentUser so setting default")
+                self.profileImageView.image = UIImage(named: "trash")
+            }
+
+            
             if let name = user.name {
                 nameLabel.text = name
             } else {

@@ -43,12 +43,35 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let file = PFUser.currentUser()!["image"] {
+            file.getDataInBackgroundWithBlock({ (data: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    self.profileImageButton.setImage(UIImage(data: data!), forState: .Normal)
+                    print("Set the image")
+                } else {
+                    print(error?.localizedDescription)
+                }
+            })
+        } else {
+            print("Didn't have image from currentUser so setting default")
+            self.profileImageButton.imageView!.image = UIImage(named: "trash")
+        }
+    }
 
     @IBAction func onProfileImageButton(sender: AnyObject) {
         let croppingEnabled = true
         let cameraViewController = ALCameraViewController(croppingEnabled: croppingEnabled) { image in
-            if image != nil {
+            if let image = image {
                 self.profileImageButton.setImage(image, forState: .Normal)
+                print("Got image from camera and saving")
+                if let imageData = UIImagePNGRepresentation(image) {
+                    PFUser.currentUser()!["image"] = PFFile(name: "image.png", data: imageData)
+                    PFUser.currentUser()?.saveInBackground()
+                }
             }
             self.dismissViewControllerAnimated(true, completion: nil)
         }
