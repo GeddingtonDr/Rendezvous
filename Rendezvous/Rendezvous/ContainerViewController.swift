@@ -55,8 +55,6 @@ class ContainerViewController: UIViewController, CLLocationManagerDelegate {
         self.scrollView!.contentSize = CGSizeMake(scrollWidth, scrollHeight);
         
         scrollView.contentOffset.x = self.view.frame.width
-        
-        PFUser.currentUser()!["whoa"] = "hello"
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,11 +69,12 @@ class ContainerViewController: UIViewController, CLLocationManagerDelegate {
         print(long)
         print(lat)
         
-        PFUser.currentUser()!["lat"] = lat
-        PFUser.currentUser()!["long"] = long
-        
-        PFUser.currentUser()!.saveInBackground()
-        
+        if let _ = PFUser.currentUser() {
+            PFUser.currentUser()!["lat"] = lat
+            PFUser.currentUser()!["long"] = long
+            
+            PFUser.currentUser()!.saveInBackground()
+        }
 //        let para:NSMutableDictionary = NSMutableDictionary()
 //        para.setValue("\(lat)", forKey: "lat")
 //        para.setValue("\(long)", forKey: "long")
