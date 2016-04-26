@@ -23,6 +23,7 @@ class CreateEventsViewController: UIViewController {
     }
     
     func saveNewEvent() {
+        var event = PFObject(className: "Event")
         
     }
 
