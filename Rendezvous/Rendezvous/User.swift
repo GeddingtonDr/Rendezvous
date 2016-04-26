@@ -7,19 +7,38 @@
 //
 
 import UIKit
+import Parse
 
 class User: NSObject {
     var name: String?
+    var username: String?
     var status: String?
-    var image: UIImage?
+    var image: PFFile?
+    var lat: Float?
+    var long: Float?
     
-    init(dictionary: NSDictionary) {
-        name = dictionary["name"] as? String
-        let location = dictionary["location"] as! String
-        // time will actually be calculated from our app, based on the location between the user and the vertex
-        // let time = "15min"
-        // status = "\(location) | \(time)"
-        status = location
-        image = UIImage(named: "trash")
+    init(obj: PFObject) {
+        super.init()
+        
+        image = obj["image"] as? PFFile
+        name = obj["nickname"] as? String
+        username = obj["username"] as? String
+        status = obj["status"] as? String
+        lat = obj["lat"] as? Float
+        long = obj["long"] as? Float
+    }
+    
+    class func fetchUsersWithCompletion(completion completion:([PFObject]?, NSError?) -> ()) {
+        let query = PFUser.query()
+        query?.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
+        query?.findObjectsInBackgroundWithBlock(completion)
+    }
+    
+    class func createUserArray(array: [PFObject]) -> [User] {
+        var posts = [User]()
+        for obj in array {
+            posts.append(User(obj: obj))
+        }
+        return posts
     }
 }

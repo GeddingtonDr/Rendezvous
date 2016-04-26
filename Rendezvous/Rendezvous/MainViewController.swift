@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Parse
 import CoreLocation
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate,CLLocationManagerDelegate{
@@ -17,15 +18,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let locationManager = CLLocationManager()
     
     var vertices:[Vertex]?
-
+    
+    var users: [User]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let dict = NSDictionary(dictionary: ["name": "Sahil Dhanju", "location": "Home"])
-        let u1 = User(dictionary: dict)
-        let v1 = Vertex(user: u1)
-        vertices = [v1, v1, v1, v1]
+        //let u1 = User(dictionary: dict)
+        //let v1 = Vertex(user: u1)
+        //vertices = [v1, v1, v1, v1]
         
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -38,6 +40,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        User.fetchUsersWithCompletion { (users: [PFObject]?, error: NSError?) -> () in
+            if error == nil {
+                self.users = User.createUserArray(users!)
+                print("got the request back")
+                self.tableView.reloadData()
+            } else {
+                print("No Users found")
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,14 +61,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (vertices?.count)!
+        if let users = users {
+            return users.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell") as! MainTableViewCell
         // set cell to vertex
-        cell.vertex = vertices![indexPath.row]
+        
+        cell.user = users[indexPath.row]
+        
+        //cell.vertex = vertices![indexPath.row]
         return cell
+        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

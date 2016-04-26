@@ -18,7 +18,23 @@ class MainTableViewCell: UITableViewCell {
         didSet {
             nameLabel.text = vertex!.user.name
             statusLabel.text = vertex!.user.status
-            profileImageView.image = vertex!.user.image
+            //profileImageView.image = vertex!.user.image
+        }
+    }
+    
+    var user: User! {
+        didSet {
+            if let name = user.name {
+                nameLabel.text = name
+            } else {
+                nameLabel.text = user.username
+            }
+            
+            if let status = user.status {
+                statusLabel.text = status
+            } else {
+                statusLabel.text = "No status available"
+            }
         }
     }
     

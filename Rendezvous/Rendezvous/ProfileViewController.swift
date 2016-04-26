@@ -57,9 +57,14 @@ class ProfileViewController: UIViewController {
     
     @IBAction func onSaveChanges(sender: AnyObject) {
         if let user = PFUser.currentUser() {
-            user["nickname"] = nicknameTextField.text
-            user["status"] = statusTextField.text
-            user["shareLocation"] = shareLocationSwitch.on
+            
+            if nicknameTextField.text != "" {
+                user["nickname"] = nicknameTextField.text
+            }
+            
+            if statusTextField.text != "" {
+                user["status"] = statusTextField.text
+            }
             
             user.saveInBackground()
             
