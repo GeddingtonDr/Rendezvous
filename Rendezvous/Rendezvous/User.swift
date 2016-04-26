@@ -14,6 +14,7 @@ class User: NSObject {
     var username: String?
     var status: String?
     var image: PFFile?
+    var allowLocation: Bool?
     var lat: Float?
     var long: Float?
     
@@ -24,6 +25,7 @@ class User: NSObject {
         name = obj["nickname"] as? String
         username = obj["username"] as? String
         status = obj["status"] as? String
+        allowLocation = obj["shareLocation"] as? Bool
         lat = obj["lat"] as? Float
         long = obj["long"] as? Float
     }
