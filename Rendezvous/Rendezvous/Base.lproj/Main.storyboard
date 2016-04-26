@@ -138,6 +138,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63O-l0-XYf">
                                 <rect key="frame" x="108" y="100" width="105" height="105"/>
                                 <state key="normal" title="Button" image="trash"/>
+                                <connections>
+                                    <action selector="onProfileImageButton:" destination="qn9-Bc-Q5V" eventType="touchUpInside" id="eFD-7S-OWf"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DzB-O0-s1J">
                                 <rect key="frame" x="251" y="303" width="51" height="31"/>
@@ -166,8 +169,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlH-DW-bh0">
-                                <rect key="frame" x="20" y="354" width="280" height="43"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <rect key="frame" x="20" y="352" width="280" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Save Changes">
                                     <color key="titleColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -176,9 +179,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-BC-HgI">
-                                <rect key="frame" x="20" y="489" width="280" height="43"/>
+                                <rect key="frame" x="20" y="405" width="280" height="43"/>
                                 <color key="backgroundColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
