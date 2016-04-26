@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ALCameraViewController
 
 class ProfileViewController: UIViewController {
 
@@ -23,7 +24,7 @@ class ProfileViewController: UIViewController {
 
         profileImageButton.imageView?.layer.cornerRadius = 53
         saveChangesButton.layer.borderColor = logoutButton.layer.backgroundColor
-        saveChangesButton.layer.borderWidth = 2
+        saveChangesButton.layer.borderWidth = 0
         
         if let user = PFUser.currentUser() {
             if let nickname = user["nickname"] {
@@ -43,6 +44,17 @@ class ProfileViewController: UIViewController {
         }
     }
 
+    @IBAction func onProfileImageButton(sender: AnyObject) {
+        let croppingEnabled = true
+        let cameraViewController = ALCameraViewController(croppingEnabled: croppingEnabled) { image in
+            if image != nil {
+                self.profileImageButton.setImage(image, forState: .Normal)
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        presentViewController(cameraViewController, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ALCameraViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCA053B6430690326435042FEB61B458</key>
+		<key>53EA164C4C0F5A8AA8AB12195B738783</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9FC63F533EE156A5CC214583450A11B</key>
+		<key>87330B1DCE9E3653334A1C392975BFB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BCA053B6430690326435042FEB61B458</key>
 		<dict>
 			<key>primary</key>
 			<true/>

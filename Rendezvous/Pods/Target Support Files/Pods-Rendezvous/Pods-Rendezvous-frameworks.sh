@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Rendezvous/ALCameraViewController.framework"
   install_framework "Pods-Rendezvous/Bolts.framework"
   install_framework "Pods-Rendezvous/Parse.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Rendezvous/ALCameraViewController.framework"
   install_framework "Pods-Rendezvous/Bolts.framework"
   install_framework "Pods-Rendezvous/Parse.framework"
 fi
