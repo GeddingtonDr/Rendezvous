@@ -1,16 +1,23 @@
 PODS:
   - ALCameraViewController (1.1.6)
   - Bolts/Tasks (1.6.0)
+  - Chatto (1.0.0)
+  - ChattoAdditions (1.0.0):
+    - Chatto
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
 
 DEPENDENCIES:
   - ALCameraViewController (= 1.1.6)
+  - Chatto (= 1.0.0)
+  - ChattoAdditions (= 1.0.0)
   - Parse
 
 SPEC CHECKSUMS:
   ALCameraViewController: 80368d0d72997d278ba21e1a62d292cfc8e6635e
   Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Chatto: 531b14bbb7d21dfc50a86fc4ff70a90367171403
+  ChattoAdditions: 27c7b59f4c1b1d51d5f37c7199164982fcc59edf
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
 
 COCOAPODS: 0.39.0

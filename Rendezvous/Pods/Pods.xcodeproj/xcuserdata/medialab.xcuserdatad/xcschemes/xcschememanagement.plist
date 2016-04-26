@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Chatto.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ChattoAdditions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53EA164C4C0F5A8AA8AB12195B738783</key>
+		<key>55224F2CE221B692624436C0C44D0056</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AF7E2DF8892E014AE5FCDF57A214D19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DD08A69500CBF4A4EFFEEE3FF9E3C54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
