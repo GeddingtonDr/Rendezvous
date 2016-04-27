@@ -37,6 +37,7 @@ class ContainerViewController: UIViewController, CLLocationManagerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let profileVC = storyboard.instantiateViewControllerWithIdentifier("ProfileViewController")
         let mainVC = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
+        let eventsVC = storyboard.instantiateViewControllerWithIdentifier("EventsViewController")
         
         self.addChildViewController(profileVC)
         self.scrollView.addSubview(profileVC.view)
@@ -46,11 +47,17 @@ class ContainerViewController: UIViewController, CLLocationManagerDelegate {
         self.scrollView.addSubview(mainVC.view)
         mainVC.didMoveToParentViewController(self)
         
+        self.addChildViewController(eventsVC)
+        self.scrollView.addSubview(eventsVC.view)
+        eventsVC.didMoveToParentViewController(self)
+        
         var adminFrame :CGRect = profileVC.view.frame
         adminFrame.origin.x = adminFrame.width
         mainVC.view.frame = adminFrame
+        adminFrame.origin.x = 2 * adminFrame.width
+        eventsVC.view.frame = adminFrame
         
-        let scrollWidth: CGFloat  = 2 * self.view.frame.width
+        let scrollWidth: CGFloat  = 3 * self.view.frame.width
         let scrollHeight: CGFloat  = self.view.frame.size.height
         self.scrollView!.contentSize = CGSizeMake(scrollWidth, scrollHeight);
         
