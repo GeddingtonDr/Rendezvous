@@ -37,10 +37,10 @@ class User: NSObject {
     }
     
     class func createUserArray(array: [PFObject]) -> [User] {
-        var posts = [User]()
+        var users = [User]()
         for obj in array {
-            posts.append(User(obj: obj))
+            users.append(User(obj: obj))
         }
-        return posts
+        return users
     }
 }
