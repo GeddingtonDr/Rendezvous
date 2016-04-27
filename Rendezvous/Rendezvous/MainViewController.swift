@@ -47,7 +47,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         User.fetchUsersWithCompletion { (users: [PFObject]?, error: NSError?) -> () in
             if error == nil {
                 self.users = User.createUserArray(users!)
-                print("got the request back")
                 self.populateMap()
                 self.tableView.reloadData()
             } else {

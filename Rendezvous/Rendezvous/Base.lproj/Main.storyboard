@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1039" y="455"/>
         </scene>
-        <!--View Controller-->
+        <!--Conversation View Controller-->
         <scene sceneID="pqX-xN-rzl">
             <objects>
-                <viewController id="HT5-d5-bP8" sceneMemberID="viewController">
+                <viewController id="HT5-d5-bP8" customClass="ConversationViewController" customModule="Rendezvous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M25-dp-hX8"/>
                         <viewControllerLayoutGuide type="bottom" id="DPK-JF-LnE"/>
@@ -119,6 +119,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4i-3h-1m7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <color key="backgroundColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW9-rh-Gwv">
                                 <rect key="frame" x="0.0" y="20" width="320" height="56"/>
                                 <color key="backgroundColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,17 +130,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4i-3h-1m7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                                <color key="backgroundColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7R-7g-uPr">
+                                <rect key="frame" x="270" y="31" width="30" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDismissAction:" destination="HT5-d5-bP8" eventType="touchUpInside" id="2gy-RW-bI6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3A-Ap-eNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-249"/>
+            <point key="canvasLocation" x="1249" y="-296"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="kRr-Vm-gL5">
@@ -327,7 +337,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <color key="backgroundColor" red="0.53300467679999997" green="0.84092881939999997" blue="0.74628806449999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pBG-fJ-cA1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pBG-fJ-cA1">
                                 <rect key="frame" x="0.0" y="75" width="320" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -335,7 +345,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6zK-Yo-3xF" id="eMA-V0-GI9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:30PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCd-kE-F3A">
@@ -350,21 +360,25 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cinemark 12 Rockwall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWM-r3-ZHH">
-                                                    <rect key="frame" x="8" y="46" width="304" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Captain America Premiere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn7-9r-Ngu">
                                                     <rect key="frame" x="8" y="8" width="304" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cinemark 12 Rockwall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWM-r3-ZHH">
+                                                    <rect key="frame" x="8" y="46" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="locationLabel" destination="lWM-r3-ZHH" id="LQM-dl-TEL"/>
+                                            <outlet property="nameLabel" destination="vn7-9r-Ngu" id="i7E-NS-Kon"/>
+                                            <outlet property="startDateLabel" destination="4mZ-D8-mCq" id="qq9-xc-9he"/>
+                                            <outlet property="startTimeLabel" destination="rCd-kE-F3A" id="fyf-Ch-2iV"/>
                                             <segue destination="HT5-d5-bP8" kind="modal" id="gwb-Wf-mOs"/>
                                         </connections>
                                     </tableViewCell>
@@ -389,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gR5-Mk-b1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="-259"/>
+            <point key="canvasLocation" x="169" y="-277"/>
         </scene>
         <!--Create Events View Controller-->
         <scene sceneID="lYi-Mq-1JK">
@@ -464,6 +478,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="locationTextField" destination="FjZ-65-QHL" id="TVw-GW-s6H"/>
+                        <outlet property="nameTextField" destination="z4c-TT-FaI" id="iMC-fj-k6B"/>
+                        <outlet property="startDatePicker" destination="FvG-ls-yvg" id="NGl-Ja-X9f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ioo-dQ-C07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

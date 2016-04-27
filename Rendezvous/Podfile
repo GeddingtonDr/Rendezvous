@@ -6,7 +6,5 @@ use_frameworks!
 target 'Rendezvous' do
 	pod 'Parse'
 	pod 'ALCameraViewController', '1.1.6'
-	pod 'Chatto', '= 1.0.0'
-	pod 'ChattoAdditions', '= 1.0.0'
 end
 

@@ -14,7 +14,6 @@ class Event: NSObject {
     var name: String?
     var locationName: String?
     var startingTime: NSDate?
-    var endingTime: NSDate?
     
     init(obj: PFObject) {
         super.init()
@@ -22,8 +21,6 @@ class Event: NSObject {
         name = obj["name"] as? String
         locationName = obj["locationName"] as? String
         startingTime = obj["startingTime"] as? NSDate
-        endingTime = obj["endingTime"] as? NSDate
-        
     }
     
     class func fetchEventsWithCompletion(completion completion:([PFObject]?, NSError?) -> ()) {
