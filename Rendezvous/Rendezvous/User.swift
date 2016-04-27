@@ -15,8 +15,8 @@ class User: NSObject {
     var status: String?
     var image: PFFile?
     var allowLocation: Bool?
-    var lat: Float?
-    var long: Float?
+    var lat: Double?
+    var long: Double?
     
     init(obj: PFObject) {
         super.init()
@@ -26,8 +26,8 @@ class User: NSObject {
         username = obj["username"] as? String
         status = obj["status"] as? String
         allowLocation = obj["shareLocation"] as? Bool
-        lat = obj["lat"] as? Float
-        long = obj["long"] as? Float
+        lat = obj["lat"] as? Double
+        long = obj["long"] as? Double
     }
     
     class func fetchUsersWithCompletion(completion completion:([PFObject]?, NSError?) -> ()) {

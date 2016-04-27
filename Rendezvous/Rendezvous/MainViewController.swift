@@ -92,7 +92,34 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func populateMap() {
-        //do shit in here
+ 
+        
+        for f in users{
+        
+            var name: String!
+            if let _ = f.name {
+                name = f.name!
+            } else {
+                name = f.username!
+            }
+            var status: String!
+            if let _ = f.status{
+                status = f.status
+            }
+            else{
+                status = "not avaliable"
+            }
+            
+    
+            let friendloc = Pins(title: name,
+                                   locationName: status,
+                                   coordinate: CLLocationCoordinate2D(latitude: f.lat!, longitude: f.long!))
+          
+            if (f.allowLocation!) {
+                mapView.addAnnotation(friendloc)
+            }
+        }
+        
     }
 
     /*
