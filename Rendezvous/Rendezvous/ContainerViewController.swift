@@ -39,6 +39,8 @@ class ContainerViewController: UIViewController, CLLocationManagerDelegate {
         let mainVC = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         let eventsVC = storyboard.instantiateViewControllerWithIdentifier("EventsViewController")
         
+        self.scrollView.pagingEnabled = true
+        
         self.addChildViewController(profileVC)
         self.scrollView.addSubview(profileVC.view)
         profileVC.didMoveToParentViewController(self)
