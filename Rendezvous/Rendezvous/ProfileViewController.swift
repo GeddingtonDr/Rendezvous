@@ -86,8 +86,8 @@ class ProfileViewController: UIViewController {
     @IBAction func onLogout(sender: AnyObject) {
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
             // PFUser.currentUser() will now be nil
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func onSaveChanges(sender: AnyObject) {

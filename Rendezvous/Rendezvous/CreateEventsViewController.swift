@@ -11,6 +11,10 @@ import Parse
 
 class CreateEventsViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +27,17 @@ class CreateEventsViewController: UIViewController {
     }
     
     @IBAction func onCreateEvent(sender: AnyObject) {
-        var event = PFObject(className: "Event")
+        let event = PFObject(className: "Event")
+        
+        event["name"] = nameTextField.text
+        event["locationTextField"] = locationTextField.text
+        
+        event["startingTime"] = startDatePicker.date
+        
+        event.saveInBackgroundWithBlock { (saved: Bool?, error: NSError?) -> Void in
+            NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     @IBAction func onCancelPressed(sender: AnyObject) {

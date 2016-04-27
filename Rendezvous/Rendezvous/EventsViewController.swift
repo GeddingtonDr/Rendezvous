@@ -19,7 +19,7 @@ class EventsViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         tableView.dataSource = self
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -30,9 +30,9 @@ class EventsViewController: UIViewController, UITableViewDataSource {
             if error == nil {
                 self.events = Event.createEventArray(events!)
                 print("got the request back")
-                //self.tableView.reloadData()
+                self.tableView.reloadData()
             } else {
-                print("No Users found")
+                print("No Events found")
             }
         }
 
@@ -40,14 +40,13 @@ class EventsViewController: UIViewController, UITableViewDataSource {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let events = events {
             return events.count
         } else {
-            return 1
+            return 0
         }
     }
     
@@ -55,13 +54,16 @@ class EventsViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell") as! EventCell
         // set cell to vertex
         
-        //cell.user = users[indexPath.row]
+        cell.event = events[indexPath.row]
         
-        //cell.vertex = vertices![indexPath.row]
         return cell
         
     }
     
+    func loadList(notification: NSNotification){
+        //load data here
+        self.tableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation

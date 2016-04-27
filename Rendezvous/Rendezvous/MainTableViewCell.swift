@@ -34,7 +34,7 @@ class MainTableViewCell: UITableViewCell {
                     }
                 })
             } else {
-                print("Didn't have image from currentUser so setting default")
+                //print("Didn't have image from currentUser so setting default")
                 self.profileImageView.image = UIImage(named: "trash")
             }
 
